@@ -1,0 +1,44 @@
+{
+  "pacientes": [
+    {
+      "idade": 34,
+      "contato": "9999-8888",
+      "convenio": "Particular",
+      "prioritario": false,
+      "historico": "Nenhum",
+      "nome": "João Silva",
+      "documento": "123"
+    },
+    {
+      "idade": 72,
+      "contato": "9999-7777",
+      "convenio": "Unimed",
+      "prioritario": true,
+      "historico": "Hipertensa",
+      "nome": "Maria Souza (Idosa)",
+      "documento": "456"
+    },
+    {
+      "idade": 12,
+      "contato": "Contato",
+      "convenio": "sim",
+      "prioritario": false,
+      "historico": "Sem histórico",
+      "nome": "lau",
+      "documento": "12312"
+    }
+  ],
+  "profissionais": [
+    {
+      "especialidade": "cardiologista",
+      "valorConsultabase": 300.0,
+      "horariodisponivel": [],
+      "nome": "raimundinho",
+      "documento": "007"
+    }
+  ],
+  "agendamentos": [],
+  "filaEspera": [],
+  "MAX_ATIVOS": 10,
+  "TAXA_CANCELAMENTO": 50.0
+}

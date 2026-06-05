@@ -32,7 +32,7 @@ public class ClinicaService {
             return "Erro: Limite de 10 agendamentos ativos simultâneos atingido. Não foi possível agendar.";
         }
 
-        // Validar conflitos
+        
         for (Agendamento a : agendamentos) {
             if (a.getStatus().equals("ATIVO") && a.getData().equals(data) && a.getHora().equals(hora)) {
                 if (a.getProfissional().getDocumento().equals(prof.getDocumento())) {
@@ -57,7 +57,7 @@ public class ClinicaService {
                 System.out.printf("Multa por cancelamento fora do prazo aplicada: R$ %.2f\n", TAXA_CANCELAMENTO);
             }
 
-            // Chamar próximo da fila de espera se houver
+            
             if (!filaEspera.isEmpty()) {
                 Paciente proximo = filaEspera.poll();
                 System.out.println("Vaga liberada! Chamando paciente prioritário da fila: " + proximo.getNome());
@@ -72,7 +72,7 @@ public class ClinicaService {
             
             double total = a.getServico().calcularValor(a.getPaciente(), a.getProfissional());
             
-            // Emissão do recibo detalhado exigido
+            
             System.out.println("\n=== EMISSÃO DE RECIBO DE ATENDIMENTO ===");
             System.out.println("Paciente: " + a.getPaciente().getNome() + " (Convênio: " + a.getPaciente().getConvenio() + ")");
             System.out.println("Profissional: " + a.getProfissional().getNome() + " (" + a.getProfissional().getEspecialidade() + ")");
@@ -104,7 +104,7 @@ public class ClinicaService {
         System.out.println("Cancelamentos registrados: " + cancelados);
         System.out.printf("Receita Total Gerada: R$ %.2f\n", receitaTotal);
         
-        // Taxa de ocupação baseada no limite de 10 simultâneos
+        
         double taxaOcupacao = ((double) ativos / MAX_ATIVOS) * 100;
         System.out.printf("Taxa de ocupação atual da agenda: %.1f%%\n", taxaOcupacao);
         System.out.println("----------------------------------");

@@ -12,12 +12,12 @@ public class Consulta implements Cobravel{
     @Override
     public double calcularValor(Paciente paciente, Profissional profissional) {
         if (tipo.equalsIgnoreCase("Retorno")) {
-            return 0.0; // Retorno não cobra
+            return 0.0;
         }
         double valor = profissional.getValorConsultabase();
-        // Desconto para convênio
+        
         if (!paciente.getConvenio().equalsIgnoreCase("Particular")) {
-            valor = valor * 0.5; // 50% de cobertura do convênio
+            valor = valor * 0.5;
         }
         return valor;
     }

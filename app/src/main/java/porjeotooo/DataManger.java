@@ -14,7 +14,6 @@ public class DataManger {
 
     public static void salvarDados(ClinicaService service) {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
-            // Guarda o estado atual da aplicação
             gson.toJson(service, writer);
             System.out.println("[Integração Externa] Dados salvos em " + FILE_PATH + " com sucesso!");
         } catch (IOException e) {

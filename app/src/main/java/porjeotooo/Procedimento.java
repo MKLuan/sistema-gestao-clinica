@@ -15,7 +15,7 @@ public class Procedimento implements Cobravel {
     public double calcularValor(Paciente paciente, Profissional profissional) {
         double valorBase = profissional.getValorConsultabase() + custoAdicional;
         if (!paciente.getConvenio().equalsIgnoreCase("Particular")) {
-            return valorBase * 0.7; // Convênio cobre 30% de procedimentos
+            return valorBase * 0.7;
         }
         return valorBase;
     }

@@ -29,7 +29,6 @@ public class App {
             System.out.println("0. Ir embora");
             System.out.print("Escolha uma opção: ");
             
-            // Usando o método seguro para ler o número
             opcao = lerNumeroInteiro(scanner);
 
             if (opcao == 1) {
@@ -51,7 +50,7 @@ public class App {
                 System.out.println("Paciente cadastrado!");
 
             } else if (opcao == 2) {
-                // NOVA LÓGICA: Cadastrar Profissional
+                
                 System.out.print("Nome do Profissional: ");
                 String nome = scanner.nextLine();
                 System.out.print("Documento/CRM: ");
